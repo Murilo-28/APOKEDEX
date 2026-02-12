@@ -1,0 +1,45 @@
+﻿<Window x:Class="APOKEDEX.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:APOKEDEX"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="Red" Margin="0,0,0,-38">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="PokemonList" Background="#FF717171" DisplayMemberPath="Nome" SelectionChanged="PokemonList_SelectionChanged" Foreground="White"/>
+        <StackPanel Background="#FF717171"  Grid.Column="1" Margin="33,10,33,36">
+            <TextBlock x:Name="NomeText" Background="#FF717171"
+                       FontSize="30"
+                       FontWeight="Bold" FontFamily="MS PGothic" Foreground="White"/>
+
+            <TextBlock x:Name="TipoText" FontFamily="MS PGothic" Foreground="White"
+                       Margin="0,5"/>
+            <Border Background="White" Padding="10" Width="504">
+                <Image x:Name="PokemonImage" Height="140" Margin="0,10"/>
+            </Border>
+            <TextBlock x:Name="DescricaoText" Background="#FF717171" TextWrapping="Wrap" Margin="0,10" FontFamily="MS PGothic" Foreground="White" FontSize="16"/>
+
+            <TextBlock Text="Linha Evolutiva" Background="#FF717171" FontSize="22" FontWeight="Bold" Margin="0,15,0,5" FontFamily="MS PGothic" Foreground="White"/>
+            <ItemsControl x:Name="EvolucaoList">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="10" HorizontalAlignment="Center">
+                            <Image Source="{Binding Imagem}" Height="70"/>
+                            <TextBlock Text="{Binding Nome}" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </Grid>
+</Window>
