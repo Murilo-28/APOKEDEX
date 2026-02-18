@@ -23,7 +23,7 @@ namespace APOKEDEX
             CarregarPokedex();
             PokemonList.ItemsSource = pokedex;
         }
-
+        //teste commit
         private void CarregarPokedex()
         {
             var bulbasaur = new Pokemon
