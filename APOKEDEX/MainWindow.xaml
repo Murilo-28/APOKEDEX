@@ -6,25 +6,23 @@
         xmlns:local="clr-namespace:APOKEDEX"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background="Red" Margin="0,0,0,-38">
+    <Grid Background="Red" Margin="0,0,0,-65">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="75*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="PokemonList" Background="#FF717171" DisplayMemberPath="Nome" SelectionChanged="PokemonList_SelectionChanged" Foreground="White"/>
-        <StackPanel Background="#FF717171"  Grid.Column="1" Margin="33,10,33,36">
-            <TextBlock x:Name="NomeText" Background="#FF717171"
-                       FontSize="30"
-                       FontWeight="Bold" FontFamily="MS PGothic" Foreground="White"/>
-
-            <TextBlock x:Name="TipoText" FontFamily="MS PGothic" Foreground="White"
-                       Margin="0,5"/>
-            <Border Background="White" Padding="10" Width="504">
-                <Image x:Name="PokemonImage" Height="140" Margin="0,10"/>
+        <ListBox x:Name="PokemonList" Background="#FF717171" DisplayMemberPath="Nome" SelectionChanged="PokemonList_SelectionChanged" Foreground="White" Margin="-1,43,1,57"/>
+        <StackPanel Background="#FF717171" Grid.Column="1" Margin="33,10,33,36">
+            <TextBlock x:Name="NomeText" FontSize="30" FontWeight="Bold" FontFamily="MS PGothic" Foreground="White"/>
+            <TextBlock x:Name="NumeroText" FontSize="18" FontWeight="SemiBold" FontFamily="MS PGothic" Foreground="White" Margin="0,5"/>
+            <TextBlock x:Name="GeracaoText" FontFamily="MS PGothic" Foreground="White" Margin="0,2"/>
+            <TextBlock x:Name="TipoText" FontFamily="MS PGothic" Foreground="White" Margin="0,5"/>
+            <Border Background="White" Padding="10" Width="504" Margin="0,10">
+            <Image x:Name="PokemonImage" Height="140"/>
             </Border>
-            <TextBlock x:Name="DescricaoText" Background="#FF717171" TextWrapping="Wrap" Margin="0,10" FontFamily="MS PGothic" Foreground="White" FontSize="16"/>
-
-            <TextBlock Text="Linha Evolutiva" Background="#FF717171" FontSize="22" FontWeight="Bold" Margin="0,15,0,5" FontFamily="MS PGothic" Foreground="White"/>
+            <TextBlock x:Name="DescricaoText" TextWrapping="Wrap" Margin="0,10" FontFamily="MS PGothic" Foreground="White" FontSize="16"/>
+            <TextBlock Text="Linha Evolutiva" FontSize="22" FontWeight="Bold" Margin="0,15,0,5" FontFamily="MS PGothic" Foreground="White"/>
             <ItemsControl x:Name="EvolucaoList">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -35,7 +33,7 @@
                     <DataTemplate>
                         <StackPanel Margin="10" HorizontalAlignment="Center">
                             <Image Source="{Binding Imagem}" Height="70"/>
-                            <TextBlock Text="{Binding Nome}" HorizontalAlignment="Center"/>
+                            <TextBlock Text="{Binding Nome}" FontFamily="MS PGothic" Foreground="White" HorizontalAlignment="Center"/>
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

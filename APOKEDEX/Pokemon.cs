@@ -10,6 +10,8 @@ namespace APOKEDEX
     {
         public string Nome { get; set; }
         public string Tipo { get; set; }
+        public int NumeroPokedex { get; set; }
+        public int Geracao { get; set; }
         public string Descricao { get; set; }
         public string Imagem { get; set; }
 
